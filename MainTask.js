@@ -1,6 +1,6 @@
 /* imports */
-var Nightmare = require('nightmare')
-var nightmare = Nightmare({ show: true })
+var Nightmare = require('nightmare');
+var nightmare = Nightmare({ show: true });
 var fs = require('fs');
 
 nightmare
@@ -12,7 +12,7 @@ nightmare
   .click('div.rc h3.r a')
 
   /* Use drop down filter to view all entries as opposed to just top 10 */
-  // this is unfortunately not working yet 
+  // this is unfortunately not working yet
   // .wait(1000)
   // .click("div.dataTables_length label select option[value='100']")
   // .wait(5000)
@@ -24,9 +24,9 @@ nightmare
     var TableEntries = [];
 
     /* retrieve the table using "id=example" and store rows */
-    table = document.getElementById("example");
-    rows = table.rows;
-    rowCount = rows.length;
+    var table = document.getElementById("example");
+    var rows = table.rows;
+    var rowCount = rows.length;
 
     /* Iterate through each row -- skips first and last rows because they are just the column titles */
     for(i = 1; i < rowCount-1; i++){
@@ -36,8 +36,8 @@ nightmare
       var rowObj = {};
 
       /* for each row, get corresponding cells from all columns */
-      cells = rows[i].cells;
-      cellCount = cells.length;
+      var cells = rows[i].cells;
+      var cellCount = cells.length;
 
       /* Iterate through each cell/column of each row */
       for (j = 0; j < cellCount; j++){
@@ -81,7 +81,7 @@ nightmare
   .then(function(result) {
 
     /* Print out all the object array */
-    console.log(result)
+    console.log(result);
 
     /* Export the array as a CSV file */
     var csv = '';
@@ -118,5 +118,5 @@ nightmare
 
   })
   .catch(function(error) {
-    console.error('Search failed:', error)
+    console.error('Search failed:', error);
   })
