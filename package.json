@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/RandaHacks/WebScraper#readme",
   "dependencies": {
-    "nightmare": "^3.0.1"
+    "cheerio": "^1.0.0-rc.2",
+    "nightmare": "^3.0.1",
+    "node-fetch": "^2.2.0"
   }
 }
